@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PracticeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/practices', [PracticeController::class, 'index']);
+Route::get('/', function() {
+    return view('practices.index');
+});
+Route::get('/', [PracticeController::class, 'index']);
