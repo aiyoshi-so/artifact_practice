@@ -22,3 +22,8 @@ Route::get('/', function() {
     return view('practices.index');
 });
 Route::get('/', [PracticeController::class, 'index']);
+Route::get('/practices/create', [PracticeController::class, 'create']);
+Route::post('/practices', [PracticeController::class, 'store']);
+Route::get('/practices/{practice}/edit', [PracticeController::class, 'edit']);
+Route::put('/practices/{practice}', [PracticeController::class, 'update']);
+Route::delete('/practices/{practice}', [PracticeController::class,'delete']);
